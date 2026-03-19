@@ -53,11 +53,13 @@ html, body {
     top: 0;
     bottom: 0;
     z-index: 100;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .sidebar.collapsed {
-    transform: translateX(-320px);
+    transform: translateX(-100%);
+    pointer-events: none;
+    opacity: 0;
 }
 
 .sidebar-toggle {
@@ -75,7 +77,14 @@ html, body {
     cursor: pointer;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    z-index: 101;
+    z-index: 102;
+    pointer-events: auto;
+}
+
+.sidebar.collapsed .sidebar-toggle {
+    right: -36px;
+    position: fixed;
+    left: 0;
 }
 
 .sidebar-toggle:hover {
@@ -220,8 +229,11 @@ html, body {
 }
 
 .map-container {
-    flex: 1;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
 }
@@ -351,6 +363,10 @@ html, body {
 @media (max-width: 768px) {
     .sidebar {
         width: 280px;
+    }
+    
+    .sidebar.collapsed {
+        transform: translateX(-100%);
     }
     
     .header h1 {
