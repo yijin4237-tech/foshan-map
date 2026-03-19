@@ -47,6 +47,45 @@ html, body {
     display: flex;
     flex-direction: column;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-320px);
+}
+
+.sidebar-toggle {
+    position: absolute;
+    right: -36px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 80px;
+    background: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar-toggle:hover {
+    background: linear-gradient(135deg, #267346 0%, #35a05e 100%);
+    width: 40px;
+}
+
+.toggle-icon {
+    color: white;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed .toggle-icon {
+    transform: rotate(180deg);
 }
 
 .sidebar-header {
@@ -80,9 +119,26 @@ html, body {
     border-left: 4px solid #2e8b57;
 }
 
+.section-title.collapsible {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.section-title.collapsible:hover {
+    background: #e8e8e8;
+}
+
 .company-title {
     border-left-color: #dc3545;
     background: #fff5f5;
+}
+
+.company-title:hover {
+    background: #ffe8e8;
 }
 
 .village-title {
@@ -90,8 +146,30 @@ html, body {
     background: #f0f9f0;
 }
 
+.village-title:hover {
+    background: #d4edd4;
+}
+
+.collapse-icon {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.section-title.collapsed .collapse-icon {
+    transform: rotate(-90deg);
+}
+
 .location-list {
     list-style: none;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.location-list.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
 }
 
 .location-item {

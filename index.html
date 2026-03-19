@@ -18,17 +18,26 @@
     </header>
     
     <div class="main-container">
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-toggle" id="sidebar-toggle" title="收起/展开">
+                <span class="toggle-icon">◀</span>
+            </div>
             <div class="sidebar-header">
                 <h2>地点列表</h2>
             </div>
             <div class="sidebar-content">
                 <div class="list-section">
-                    <h3 class="section-title company-title">公司位置</h3>
+                    <h3 class="section-title company-title collapsible">
+                        <span>公司位置</span>
+                        <span class="collapse-icon">▼</span>
+                    </h3>
                     <ul class="location-list" id="company-list"></ul>
                 </div>
                 <div class="list-section">
-                    <h3 class="section-title village-title">村落位置</h3>
+                    <h3 class="section-title village-title collapsible">
+                        <span>村落位置</span>
+                        <span class="collapse-icon">▼</span>
+                    </h3>
                     <ul class="location-list" id="village-list"></ul>
                 </div>
             </div>
