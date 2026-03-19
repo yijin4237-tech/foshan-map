@@ -63,9 +63,9 @@ html, body {
 }
 
 .sidebar-toggle {
-    position: absolute;
-    right: -36px;
-    top: 50%;
+    position: fixed;
+    left: 320px;
+    top: calc(50% + 30px);
     transform: translateY(-50%);
     width: 36px;
     height: 80px;
@@ -76,20 +76,17 @@ html, body {
     justify-content: center;
     cursor: pointer;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    z-index: 102;
-    pointer-events: auto;
-}
-
-.sidebar.collapsed .sidebar-toggle {
-    right: -36px;
-    position: fixed;
-    left: 0;
+    transition: left 0.3s ease;
+    z-index: 200;
 }
 
 .sidebar-toggle:hover {
     background: linear-gradient(135deg, #267346 0%, #35a05e 100%);
     width: 40px;
+}
+
+.sidebar-toggle.collapsed {
+    left: 0;
 }
 
 .toggle-icon {
@@ -98,7 +95,7 @@ html, body {
     transition: transform 0.3s ease;
 }
 
-.sidebar.collapsed .toggle-icon {
+.sidebar-toggle.collapsed .toggle-icon {
     transform: rotate(180deg);
 }
 
@@ -367,6 +364,14 @@ html, body {
     
     .sidebar.collapsed {
         transform: translateX(-100%);
+    }
+    
+    .sidebar-toggle {
+        left: 280px;
+    }
+    
+    .sidebar-toggle.collapsed {
+        left: 0;
     }
     
     .header h1 {

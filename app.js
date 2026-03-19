@@ -285,6 +285,7 @@ function initSidebarToggle() {
     
     toggleBtn.addEventListener('click', function() {
         sidebar.classList.toggle('collapsed');
+        toggleBtn.classList.toggle('collapsed');
     });
 }
 
