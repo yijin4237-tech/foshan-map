@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佛山市十大古村落分布地图</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: 'ba4c47ed2b21e264c4e5d4c4c0991aa6',
+        }
+    </script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=b4f837764957d4a99f3801a0a4ba3240"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>佛山市十大古村落分布地图</h1>
+    </header>
+    
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>地点列表</h2>
+            </div>
+            <div class="sidebar-content">
+                <div class="list-section">
+                    <h3 class="section-title company-title">公司位置</h3>
+                    <ul class="location-list" id="company-list"></ul>
+                </div>
+                <div class="list-section">
+                    <h3 class="section-title village-title">村落位置</h3>
+                    <ul class="location-list" id="village-list"></ul>
+                </div>
+            </div>
+        </aside>
+        
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
